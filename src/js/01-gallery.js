@@ -1,13 +1,11 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
 // Add imports above this line
+import simpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items';
+import { refs } from './refs';
 // Change code below this line
-const galleryContainer = document.querySelector(".gallery");
 const gallery = newGallery(galleryItems);
-
-galleryContainer.insertAdjacentHTML("afterbegin", gallery);
-
+refs.galleryContainer.insertAdjacentHTML('afterbegin', gallery);
 
 function newGallery(galleryItems) {
   return galleryItems
@@ -18,9 +16,9 @@ function newGallery(galleryItems) {
 </a>
 </div>`;
     })
-    .join("");
+    .join('');
 }
 
-new SimpleLightbox('.gallery a', {  captionDelay: 250, captionsData: "alt"});
+new simpleLightbox('.gallery a', { captionDelay: 250, captionsData: 'alt' });
 
 console.log(galleryItems);
