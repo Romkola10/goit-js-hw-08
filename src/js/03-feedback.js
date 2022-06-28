@@ -18,7 +18,7 @@ function textReader(event) {
 
 function handSubmit(event) {
     event.preventDefault();
-    console.log(localStorage.getItem(keyOfLocalStorage));
+    console.log(JSON.parse(localStorage.getItem(keyOfLocalStorage)));
     localStorage.removeItem(keyOfLocalStorage);
     formRef.reset()
 }
@@ -30,8 +30,8 @@ function upForm() {
         if (startText) {
             console.log(startText.email);
             console.log(email.value);
-            email.value = startText.email;
-            message.value = startText.message;
+            email.value = startText.email || '';
+            message.value = startText.message || '';
         }
     }
     catch {
